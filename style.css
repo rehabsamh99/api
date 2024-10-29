@@ -1,0 +1,250 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family:'cairo-bold';
+    outline: none;
+}
+::-webkit-scrollbar{
+    width: 0;
+}
+body{
+    direction: rtl;
+    scroll-behavior: smooth;
+    background-color:blanchedalmond;
+}
+ul,li{
+    list-style: none;
+}
+.container{
+    max-width:1450px;
+    width: 100%;
+    margin: 0 auto;
+    position: relative;
+    padding: 0 10px ;
+}
+section{
+    padding: 70px 0 ;
+}
+/*****header*****/
+.header{
+    position: fixed;
+    top: 0 ;
+    right: 0;
+    left: 0;
+    z-index: 1;
+    transition: .5s all ease-in-out; 
+}
+.header .container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 70px ;
+    color: #fff ;
+    transition: .5s all ease-in-out;
+}
+.header {
+    background-color: rgba(0, 0, 0, .6);
+}
+.header .navbar-brand{
+    font-family: thuluth-decorated;
+    font-size: 30px ;
+    cursor: pointer;
+}
+.header .container {
+    height: 60px;
+}
+
+/*********main***********/
+.main{
+    background: url(images/image1.jpg) center center/cover no-repeat; 
+}
+.main .container{
+    min-height: 100vh;
+}
+.main .title{
+    position:absolute;
+    top: 50%;
+    transform: translatey(-50%);
+    color: #fff;
+    margin-top:  50PX;
+}
+main.title h2 {
+    line-height: 1.9;
+    font-size: 60px ;
+    margin-bottom: 25px ;
+}
+.title .btn{
+    border: 2px solid #fff;
+    padding: 5px 15px ;
+    border-radius: 30px ;
+    background: transparent;
+    font-weight: 400;
+    font-size: 20px;
+    color: inherit;
+    display: flex;
+    align-items: center;
+    position: relative;
+    transition: .3s all ease-in-out;
+}
+
+.title .btn i {
+    font-size: 25px ;
+    margin-right: 20px ;
+}
+.title .btn::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 0;
+    height: 100%;
+    transition: .3s all ease-in-out;
+    background-color:burlywood;
+    z-index: -1 ;
+    border-radius: 30px;
+}
+.title .btn:hover{
+    color: #232323;
+}
+.title .btn:hover::after{
+    width: 100%;
+}
+/*********quran sec*************/
+.surahscontainer{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+.surahscontainer .surah{
+    min-height: 100px ;
+    min-width: 150px ;
+    box-shadow: 0 0 5px rgb(0, 0, 0 , .4) ;
+    margin-bottom: 5px ;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: .5s all ease-in-out;
+    color: teal;
+    font-size: 17px ;
+    background-color:bisque;
+}
+.surahscontainer .surah:hover{
+    transform: scale(1.05);
+}
+.quran h3 { 
+    font-family:thuluth-decorated;
+    color: teal;
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 2.5rem;
+}
+.surah-popup{
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 2;
+    background-color: bisque;
+    overflow-y: scroll;
+    transform: translateX(100%);
+}
+.surah-popup.active {
+    transform: translateX(0);
+    transition: .7s transform all ease-in-out;
+}
+.surah-popup::-webkit-scrollbar{
+    width: 10px ;
+    background-color: teal;
+}
+.surah-popup::-webkit-scrollbar-thumb{
+    background-color:#fff;
+}
+.close-popup{
+    position: sticky;
+    top: 5px;
+    right: 5px;
+    width: 30px;
+    height: 30px;
+    box-shadow: 0 0 4px rgb(0 , 0 , 0 , .4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 23px;
+    color: #121212;
+    cursor: pointer;
+    border-radius: 30px;
+
+}
+.surah-popup .ayat{
+    padding: 20px ;
+    width: calc(100% - 40px);
+    margin-top: 20px;
+    margin-right: 40px;
+    color: #121212;
+    text-align: center;
+    text-align: center;
+}
+.surah-popup .ayat p{
+    line-height: 2;
+    width: 100%;
+    border-bottom: 2px solid teal;
+    margin-bottom: 10px ;
+    font-family:thuluth-decorated ;
+    font-weight: bold;
+    font-size: 30px ;
+}
+/********scroll***********/
+.scrollup{
+    position: fixed;
+    right: 1rem;
+    bottom: -30%rem;
+    background-color:tan;
+    box-shadow: 0 8px 12px hsla(228 , 66% , 45% , .1);
+    display: inline-flex;
+    padding: .35rem ;
+    color: teal;
+    font-size: 1.5rem ;
+    transition: .3s;
+    text-decoration: none;
+    border-radius:30px ;
+}
+.scrollup:hover{
+    transform: translateY(-.25rem);
+    color:tan;
+    background-color: teal;
+}
+
+.show-scroll{
+bottom: 8rem;
+}
+
+/*******footer********/
+.footer{
+    padding: 0;
+}
+.footer svg{
+    fill: teal;
+    transform: translateY(10px);
+}
+.footer .social {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: teal;
+    color: tan ;
+}
+
+.footer .social a {
+    margin: 15px;
+    font-size: 30px;
+    color: tan;
+}
+
+.footer .social a:hover{
+    transition: .3s;
+    transform: scale(1.1);
+}
