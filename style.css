@@ -11,7 +11,7 @@
 body{
     direction: rtl;
     scroll-behavior: smooth;
-    background-color:burlywood;
+    /*background-color:rgb(253, 217, 173);*/
 }
 ul,li{
     list-style: none;
@@ -111,6 +111,9 @@ main.title h2 {
     width: 100%;
 }
 /*********quran sec*************/
+.quran{
+    background-color: beige;
+}
 .surahscontainer{
     display: flex;
     justify-content: space-around;
@@ -140,6 +143,7 @@ main.title h2 {
     text-align: center;
     margin-bottom: 30px;
     font-size: 2.5rem;
+    
 }
 .surah-popup{
     position: fixed;
@@ -197,6 +201,78 @@ main.title h2 {
     font-weight: bold;
     font-size: 30px ;
 }
+
+/********praytime******************/
+.pray{
+    background-color: beige;
+}
+.pray .cards{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.pray h3 {
+    font-family:thuluth-decorated;
+    color: teal;
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 2.5rem;
+}
+.cards .card{
+    width: 250px;
+    min-height: 320px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, .4);
+    padding: 30px 20px;
+    margin: 20px auto;
+    background-color: bisque;
+}
+.card .circle{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.circle svg{
+    width: 210px;
+    height: 210px;
+}
+.circle svg circle{
+    width: 100%;
+    height: 100%;
+    fill: none;
+    stroke-width: 7 ;
+    stroke: teal;
+    transform: translate(5px,5px);
+    stroke-dasharray: 2 ; 
+    stroke-dashoffset: 1000;
+    animation: dash 3s linear forwards;
+}
+
+@keyframes dash {
+    to {
+        stroke-dashoffset: 0;
+    }
+    }
+
+.circle .praytime{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    color: teal;
+    font-size: 40px;
+    font-family:cursive ;
+}
+
+.card p{
+    color: teal;
+    font-size: 25px;
+    margin-top: 20px;
+    text-align: center;
+    font-weight: bold;
+    font-family: cursive;
+}
+
 /********scroll***********/
 .scrollup{
     position: fixed;
@@ -225,6 +301,7 @@ bottom: 8rem;
 /*******footer********/
 .footer{
     padding: 0;
+    background-color: beige;
 }
 .footer svg{
     fill: teal;

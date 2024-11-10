@@ -59,6 +59,34 @@ const scrollUp = () =>{
     window.addEventListener('scroll', scrollUp)
                 
 
+//praytime API
+
+let cards = document.querySelector('.cards');
+getPrayTimes();
+function getPrayTimes(){
+        fetch("https://api.aladhan.com/v1/timingsByCity?city=cairo&country=egypt&method=8")
+        .then(response => response.json())
+        .then( data=>{
+        let times = data.data.timings;
+        cards.innerHTML ="";
+        for(let time in times){
+            cards.innerHTML+=
+            `
+                <div class="card">
+                    <div class="circle">
+                        <svg>
+                            <circle cx="100" cy="100" r="100"></circle>
+                        </svg>
+                        <div class="praytime">${times[time]}</div>
+                    </div> 
+                    <p>${time}</p>
+                    </div>
+                </div>
+            `
+        }
+        })
+}
+
 
 
 
